@@ -51,7 +51,7 @@ public class WhatsappController {
 
         return whatsappService.createMessage(content);
     }
-
+//
     @PutMapping("/send-message")
     public int sendMessage(Message message, User sender, Group group) throws Exception{
         //Throw "Group does not exist" if the mentioned group does not exist
@@ -69,7 +69,7 @@ public class WhatsappController {
 
         return whatsappService.changeAdmin(approver, user, group);
     }
-
+//
     @DeleteMapping("/remove-user")
     public int removeUser(User user) throws Exception{
         //This is a bonus problem and does not contains any marks
