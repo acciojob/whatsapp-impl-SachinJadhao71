@@ -39,7 +39,7 @@ public class WhatsappRepository {
 
     int idx = 1;
     public Group createGroup(List<User> users) {
-        Group g = new Group();
+        Group g = new Group("raj",2);
         groupUserMap.put(g,users);
         int size = users.size();
 
@@ -60,7 +60,8 @@ public class WhatsappRepository {
     }
 
     public int createMessage(String content) {
-        Message m = new Message();
+        Date date = new Date("22/03/04");
+        Message m = new Message(1,content,date);
         m.setId(m.getId()+1);
         m.setContent(content);
 
@@ -119,7 +120,7 @@ public class WhatsappRepository {
         //If user is found in a group and it is the admin, throw "Cannot remove admin" exception
         //If user is not the admin, remove the user from the group, remove all its messages from all the databases, and update relevant attributes accordingly.
         //If user is removed successfully, return (the updated number of users in the group + the updated number of messages in group + the updated number of overall messages)
-        Group g = new Group();
+        Group g = new Group("sachin",2);
         List<User> al = groupUserMap.get(g);
         boolean flag = false;
 
